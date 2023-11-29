@@ -801,7 +801,8 @@ procedure UnloadZEND;
 var
  H : THandle;
 begin
-  H := InterlockedExchange(Integer(PHPLib), 0);
+  var I := Integer(PHPLib);
+  H := InterlockedExchange(I, 0);
   if H > 0 then
   begin
     FreeLibrary(H);

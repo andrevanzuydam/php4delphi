@@ -15,14 +15,13 @@ unit DelphiFunctions;
 
 interface
 uses
-  Windows, SysUtils, Classes,
-  Controls,
-  ZendTypes, ZendAPI, PHPTypes, PHPAPI, Dialogs, ShellAPI, typinfo,
+  Windows, SysUtils, Classes, FMX.Dialogs, FMX.Controls, FMX.Forms,
+  ZendTypes, ZendAPI, PHPTypes, PHPAPI, ShellAPI, typinfo,
   {$IFDEF VERSION7}
   ActiveX,
-  ObjComAuto,
+  ObjComAuto
   {$ENDIF}
-  Forms, stdctrls;
+  ;
 
 
 {$IFDEF VERSION7}
@@ -630,7 +629,7 @@ begin
      Scripter := TPHPScriptableObject(Obj);
      if SameText('Parent', propname) then
       begin
-        TWinControl(Scripter.InstanceObj).Parent := TWinControl(value^.value.lval);
+        TControl(Scripter.InstanceObj).Parent := TControl(value^.value.lval);
       end
         else
           Scripter.SetPropertyByID(Scripter.NameToDispID(propname), [zval2variant(value^)] );

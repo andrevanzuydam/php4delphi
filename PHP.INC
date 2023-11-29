@@ -23,6 +23,8 @@ If you are using PHP version 5.1.2 or higher please add $DEFINE PHP512
 {.$DEFINE PHP433}
 {.$DEFINE PHP430}
 
+{$DEFINE VERSION9}
+
 {If you are using PHP 4 please comment $DEFINE PHP5}
 
 {PHP5 must be defined if you are using PHP5}
@@ -66,7 +68,7 @@ If you are using PHP version 5.1.2 or higher please add $DEFINE PHP512
 {.$DEFINE PHP4DELPHI_AUTOUNLOAD}   // Unload php4ts.dll at finalization
 
 
-{$DEFINE REGISTER_COLORS} //register php constants for colors
+{.$DEFINE REGISTER_COLORS} //register php constants for colors
 
 {$IFNDEF LINUX}
  {$DEFINE ZTS}                                               {zts support}

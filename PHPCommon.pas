@@ -19,7 +19,7 @@ unit PHPCommon;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Windows, Messages, SysUtils, Classes,
   ZendTypes, ZendAPI, PHPTypes, PHPAPI;
 
 type
@@ -272,10 +272,10 @@ function TPHPVariable.GetAsInteger: integer;
 var
  c : char;
 begin
-  c := DecimalSeparator;
-  DecimalSeparator := '.';
+  c := FormatSettings.DecimalSeparator;
+  FormatSettings.DecimalSeparator := '.';
   Result := Round(ValueToFloat(FValue));
-  DecimalSeparator := c;
+  FormatSettings.DecimalSeparator := c;
 end;
 
 function TPHPVariable.GetDisplayName: string;
@@ -303,10 +303,10 @@ procedure TPHPVariable.SetAsInteger(const Value: integer);
 var
  c : char;
 begin
-  c := DecimalSeparator;
-  DecimalSeparator := '.';
+  c := FormatSettings.DecimalSeparator;
+  FormatSettings.DecimalSeparator := '.';
   FValue := IntToStr(Value);
-  DecimalSeparator := c;
+  FormatSettings.DecimalSeparator := c;
 end;
 
 { TPHPConstant }

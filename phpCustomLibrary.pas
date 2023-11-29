@@ -16,7 +16,7 @@ unit PHPCustomLibrary;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  Windows, Messages, SysUtils, Classes,  FMX.Dialogs,
   PHPCommon,
   ZendTypes, PHPTypes, PHPAPI, ZENDAPI, php4Delphi, phpFunctions;
 

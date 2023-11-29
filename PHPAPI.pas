@@ -214,7 +214,7 @@ procedure PHP_FUNCTION(var AFunction : zend_function_entry; AName : PChar; AHand
 {$IFDEF PHP4}
 function LoadPHP(const DllFileName: string = 'php4ts.dll') : boolean;
 {$ELSE}
-function LoadPHP(const DllFileName: string = 'php5ts.dll') : boolean;
+function LoadPHP(const DllFileName: string = 'php8ts.dll') : boolean;
 {$ENDIF}
 
 procedure UnloadPHP;
@@ -455,7 +455,7 @@ end;
 {$IFDEF PHP4}
 function LoadPHP(const DllFileName: string = 'php4ts.dll') : boolean;
 {$ELSE}
-function LoadPHP(const DllFileName: string = 'php5ts.dll') : boolean;
+function LoadPHP(const DllFileName: string = 'php8ts.dll') : boolean;
 {$ENDIF}
 
 begin
@@ -798,20 +798,20 @@ function FloatToValue(Value: Extended): string;
 var
   c: Char;
 begin
-  c := DecimalSeparator;
-  DecimalSeparator := '.';
+  c := FormatSettings.DecimalSeparator;
+  FormatSettings.DecimalSeparator := '.';
   Result := SysUtils.FormatFloat('0.####', Value);
-  DecimalSeparator := c;
+  FormatSettings.DecimalSeparator := c;
 end;
 
 function ValueToFloat(Value : string) : extended;
 var
   c: Char;
 begin
-  c := DecimalSeparator;
-  DecimalSeparator := '.';
+  c := FormatSettings.DecimalSeparator;
+  FormatSettings.DecimalSeparator := '.';
   Result := SysUtils.StrToFloat(Value);
-  DecimalSeparator := c;
+  FormatSettings.DecimalSeparator := c;
 end;
 
 

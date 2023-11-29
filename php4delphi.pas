@@ -34,7 +34,7 @@ unit php4delphi;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics,
+  Windows, Messages, SysUtils, Classes,  System.UITypes,
   PHPCommon,
   ZendTypes, PHPTypes, zendAPI, PHPAPI, DelphiFunctions;
 
@@ -732,7 +732,7 @@ end;
 {$IFDEF REGISTER_COLORS}
 const
   Colors: array[0..41] of TIdentMapEntry = (
-    (Value: clBlack; Name: 'clBlack'),
+    (Value: $ff000000; Name: 'clBlack'),
     (Value: clMaroon; Name: 'clMaroon'),
     (Value: clGreen; Name: 'clGreen'),
     (Value: clOlive; Name: 'clOlive'),
@@ -1107,7 +1107,7 @@ begin
       if FDLLFolder <> '' then
        begin
          {$IFDEF PHP5}
-          DLLName := IncludeTrailingBackslash(FDLLFolder) + 'php5ts.dll';
+          DLLName := IncludeTrailingBackslash(FDLLFolder) + 'php8ts.dll';
          {$ELSE}
           DLLName := IncludeTrailingBackslash(FDLLFolder) + 'php4ts.dll';
          {$ENDIF}
@@ -1115,7 +1115,7 @@ begin
        end
         else
           {$IFDEF PHP5}
-          DLLName := 'php5ts.dll';
+          DLLName := 'php8ts.dll';
           {$ELSE}
           DLLName := 'php4ts.dll';
           {$ENDIF}

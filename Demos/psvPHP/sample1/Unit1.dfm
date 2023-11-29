@@ -1,44 +1,46 @@
 object frmPHPDemo: TfrmPHPDemo
   Left = 299
   Top = 239
-  Width = 783
-  Height = 540
   Caption = 'psvPHP demo'
+  ClientHeight = 502
+  ClientWidth = 771
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -11
   Font.Name = 'MS Sans Serif'
   Font.Style = []
-  OldCreateOrder = False
   Position = poScreenCenter
   OnCreate = FormCreate
-  PixelsPerInch = 96
   TextHeight = 13
   object Splitter1: TSplitter
-    Left = 484
+    Left = 480
     Top = 0
     Width = 4
-    Height = 465
-    Cursor = crHSplit
+    Height = 461
     Align = alRight
+    ExplicitLeft = 484
+    ExplicitHeight = 465
   end
   object pnlButtons: TPanel
     Left = 0
-    Top = 465
-    Width = 775
+    Top = 461
+    Width = 771
     Height = 41
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 0
+    ExplicitTop = 460
+    ExplicitWidth = 767
     object Panel2: TPanel
-      Left = 590
+      Left = 586
       Top = 0
       Width = 185
       Height = 41
       Align = alRight
       BevelOuter = bvNone
       TabOrder = 0
+      ExplicitLeft = 582
       object btnExecuteCode: TButton
         Left = 88
         Top = 8
@@ -62,25 +64,27 @@ object frmPHPDemo: TfrmPHPDemo
   object WebBrowser1: TWebBrowser
     Left = 0
     Top = 0
-    Width = 484
-    Height = 465
+    Width = 480
+    Height = 461
     Align = alClient
     TabOrder = 1
     ControlData = {
-      4C000000063200000F3000000000000000000000000000000000000000000000
+      4C0000009C310000A52F00000000000000000000000000000000000000000000
       000000004C000000000000000000000001000000E0D057007335CF11AE690800
       2B2E126208000000000000004C0000000114020000000000C000000000000046
       8000000000000000000000000000000000000000000000000000000000000000
       00000000000000000100000000000000000000000000000000000000}
   end
   object Panel3: TPanel
-    Left = 488
+    Left = 484
     Top = 0
     Width = 287
-    Height = 465
+    Height = 461
     Align = alRight
     Caption = 'Panel3'
     TabOrder = 2
+    ExplicitLeft = 480
+    ExplicitHeight = 460
     object Label1: TLabel
       Left = 1
       Top = 1
@@ -88,20 +92,23 @@ object frmPHPDemo: TfrmPHPDemo
       Height = 13
       Align = alTop
       Caption = '  PHP code'
+      ExplicitWidth = 55
     end
     object Label2: TLabel
       Left = 1
-      Top = 295
+      Top = 291
       Width = 285
       Height = 13
       Align = alBottom
       Caption = '  Result values'
+      ExplicitTop = 290
+      ExplicitWidth = 70
     end
     object memPHPCode: TMemo
       Left = 1
       Top = 14
       Width = 285
-      Height = 281
+      Height = 277
       Align = alClient
       Lines.Strings = (
         'echo "Before function declaration...<br>\n";'
@@ -144,15 +151,17 @@ object frmPHPDemo: TfrmPHPDemo
       ScrollBars = ssBoth
       TabOrder = 0
       WordWrap = False
+      ExplicitHeight = 276
     end
     object lbVariables: TListBox
       Left = 1
-      Top = 308
+      Top = 304
       Width = 285
       Height = 156
       Align = alBottom
       ItemHeight = 13
       TabOrder = 1
+      ExplicitTop = 303
     end
   end
   object psvPHP: TpsvPHP
@@ -169,6 +178,7 @@ object frmPHPDemo: TfrmPHPDemo
     HTMLErrors = True
     HandleErrors = False
     OnLogMessage = psvPHPLogMessage
+    DLLFolder = 'D:\php\php8.2.5'
     Left = 116
     Top = 28
   end

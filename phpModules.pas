@@ -430,7 +430,7 @@ begin
     if not InitInheritedComponent(Self, TCustomPHPExtension) then
       raise EResNotFound.CreateFmt(SResNotFound, [ClassName]);
     try
-      if Assigned(OnCreate) and OldCreateOrder then OnCreate(Self);
+      if Assigned(OnCreate) then OnCreate(Self);
     except
       Forms.Application.HandleException(Self);
     end;
